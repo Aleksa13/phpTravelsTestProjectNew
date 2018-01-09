@@ -47,8 +47,13 @@ public class FlightsTest extends BaseTest {
 
         driver.switchTo().activeElement();
 
+        Thread.sleep(2000);
+
         WebElement enterDate = driver.findElement(By.id("mewtwo-datepicker-2018-1-23"));
         enterDate.click();
+
+        //WebElement departDate = driver.findElement(By.cssSelector(".mewtwo-flights-dates .mewtwo-flights-dates-return"));
+        //departDate.click();
 
 
         WebElement returnDate = driver.findElement(By.id("mewtwo-datepicker-2018-1-27"));
