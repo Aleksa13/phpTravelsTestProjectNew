@@ -15,60 +15,60 @@ import static org.testng.Assert.assertTrue;
 public class HotelsTest extends BaseTest {
     MainPage firstPage;
 
-
         @BeforeMethod(alwaysRun = true)
 
 
     public void openMainPage() throws InterruptedException {
             firstPage = new MainPage(driver);
-            firstPage.openPage("http://www.phptravels.net/");
-        }
-
+            firstPage.openPage("http://www.phptravels.net/"); }
 
     @Test
     public void mainPageTest() {
-        //check that main page is opened
 
         String url = firstPage.getPageUrl();
-        assertEquals(url, "http://www.phptravels.net/", "phpBooking page opened fail");
-    }
+        assertEquals(url, "http://www.phptravels.net/", "phpBooking page opened fail"); }
+
 
     @Test (dataProvider = "Hotels", dataProviderClass = TestDataProvider.class)
-    public void hotelsTest(String name, String checkInDates, String checkOutDates, int childIndex, int index, int stars)throws InterruptedException {
-        //check Hotels
-        firstPage.selectHotelTitle()
-                .enterCity(name)
-                .checkInDate(checkInDates)
-                .checkOutDate(checkOutDates);
+    public void hotelsTest(String name, //String checkInDates, String checkOutDates,
+                           int childIndex, int index, int stars)throws InterruptedException {
 
+        firstPage
+                .selectHotelTitle()
+                .enterCity(name);
+            //    .checkInDate(checkInDates);
         Thread.sleep(2000);
+            //    firstPage.checkOutDate(checkOutDates);
+        Thread.sleep(2000);
+
+
 
         firstPage.childIndex(childIndex)
                 .kidsAge(index)
-                .clickDoneButton();
+                .DoneButton();
 
         Thread.sleep(2000);
 
-        firstPage.clickSearchButton();
+        firstPage.SearchButton();
 
         String url = driver.getCurrentUrl();
         assertTrue(url.contains( "http://www.phptravels.net/properties/search?city="), "phpSearch page opened fail");
 
-         ResultsPage secondPage = new ResultsPage(driver);
-         secondPage
-                 .clickFilterButton()
-                 .selectStars(stars)
-                 .clickSearchButton();
 
+         ResultsPage secondPage = new ResultsPage(driver);
+         secondPage.FilterButton();
+         secondPage.SearchButton();
+         secondPage.selectStars(stars);
 
          //List<WebElements>??
-
-         WebElement searchResult1 = driver.findElement(By.cssSelector(" tr:nth-child(1) > td > div.col-md-4.col-xs-5.go-right.rtl_pic > div > a > img"));
-         WebElement searchResult2 = driver.findElement(By.cssSelector(" tr:nth-child(2) > td > div.col-md-4.col-xs-5.go-right.rtl_pic > div > a > img"));
-         WebElement searchResult3 = driver.findElement(By.cssSelector(" tr:nth-child(3) > td > div.col-md-4.col-xs-5.go-right.rtl_pic > div > a > img"));
+//
+//         WebElement searchResult1 = driver.findElement(By.cssSelector(" tr:nth-child(1) > td > div.col-md-4.col-xs-5.go-right.rtl_pic > div > a > img"));
+//         WebElement searchResult2 = driver.findElement(By.cssSelector(" tr:nth-child(2) > td > div.col-md-4.col-xs-5.go-right.rtl_pic > div > a > img"));
+//         WebElement searchResult3 = driver.findElement(By.cssSelector(" tr:nth-child(3) > td > div.col-md-4.col-xs-5.go-right.rtl_pic > div > a > img"));
 
 
      }
+
 
 
 }

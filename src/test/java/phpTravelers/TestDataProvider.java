@@ -30,9 +30,12 @@ public class TestDataProvider {
             public static Object [][] hotels (){
 
         return new Object[][]{
-                {"London","01/31/2018","03/25/2018",0,2,1 },
-                {"New York","03/24/2018","04/13/2018",1,3, 2},
-                {"Riga","06/23/2018","08/10/2018",2,5, 3}};
+                {"London, United Kingdom",//"01/31/2018","02/02/2018",
+                        1,2,1},
+                {"New York, New York, United States",//"03/24/2018","04/13/2018",
+                        1,3,2},
+                {"Riga, Latvia",//"06/23/2018","08/10/2018",
+                        2,5,3}};
 
             }
 
@@ -40,7 +43,7 @@ public class TestDataProvider {
     public static Object[][] results() {
 
         return new Object[][]{
-                {"div:nth-child(9) > div > ins"}, {"div:nth-child(7) > div > ins"}, {"div:nth-child(9) > div > ins"}};
+                {"#\\35"}, {"#\\34"}, {"#\\33"}};
     }
 
 

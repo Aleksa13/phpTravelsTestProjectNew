@@ -13,31 +13,28 @@ import java.util.List;
 public class ResultsPage extends AbstractWebPage{
     ResultsPage(WebDriver driver) {
         super(driver);
+        this.driver=driver;
     }
-
 //    public ResultsPage getArticles(String selector) {
 //        List<WebElement> starsResults = driver.findElements(By.cssSelector(selector));
 //        return selector;
 //    }
 
+    public WebElement SearchButton() {
+    driver.findElement(By.cssSelector("#searchform")).click();
+    return SearchButton();
 
-    public ResultsPage clickSearchButton() {
-    WebElement searchButton = driver.findElement(By.cssSelector("#searchform"));
-    searchButton.click();
-    return this;
+    }
+    public WebElement FilterButton() {
+        driver.findElement(By.cssSelector("#body-section > div.header-mob.mt-25 > div > div > div:nth-child(4) > div > a")).click();
+        return FilterButton();
     }
 
     public ResultsPage selectStars(int stars) {
-        WebElement selectStars = driver.findElement(By.cssSelector("#\\3"+stars));
-        selectStars.click();
+        driver.findElement(By.id("#\\3"+stars)).click();
         return this;
     }
 
-    public ResultsPage clickFilterButton() {
-        WebElement filterButton = driver.findElement(By.cssSelector("div:nth-child(4) > div > a"));
-        filterButton.click();
-        return this;
-    }
 
 }
 

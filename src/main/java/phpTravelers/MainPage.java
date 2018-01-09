@@ -16,48 +16,58 @@ public class MainPage extends AbstractWebPage{
 
     MainPage(WebDriver driver) {
         super(driver);
+        this.driver=driver;}
 
-    }
+
     public MainPage selectHotelTitle() {
-        WebElement hotelTitle = driver.findElement(By.cssSelector("div.RTL_Bar.searcharea > div > ul > li.active > a"));
-        hotelTitle.click();
-        return this;
-    }
+        driver.findElement(By.cssSelector("[href*='#EXPEDIA")).click();
+        return this; }
+
+
     public MainPage enterCity(String name) {
+
             WebElement enterCity = driver.findElement(By.cssSelector("#citiesInput"));
             enterCity.click();
-            //enterCity.clear();
+            enterCity.clear();
             enterCity.sendKeys(name);
-        return this;
 
+            driver.switchTo().activeElement();
+            driver.findElement(By.cssSelector("#eac-container-citiesInput"));
+            driver.findElement(By.cssSelector("#eac-container-citiesInput > ul > li:nth-child(1) > div")).click();
+            return this;
     }
+
 
     public MainPage checkInDate(String checkInDates) {
         WebElement checkInDate = driver.findElement(By.cssSelector("#dpean1 > input"));
         checkInDate.click();
         checkInDate.clear();
+//        driver.switchTo().activeElement();
+//        WebElement enterDate = driver.findElement(By.cssSelector("body > div:nth-child(19)"+date));
+//        enterDate.click();
+//        driver.switchTo().activeElement();
+//        return this;
         checkInDate.sendKeys(checkInDates);
         return this;
-
     }
+
 
     public MainPage checkOutDate(String checkOutDates) {
-        WebElement checkOutDate = driver.findElement(By.cssSelector("#dpd2 > input"));
+        WebElement checkOutDate = driver.findElement(By.cssSelector("dpd2 > input"));
         checkOutDate.click();
         checkOutDate.clear();
+        driver.switchTo().activeElement();
         checkOutDate.sendKeys(checkOutDates);
+        driver.switchTo().activeElement();
+        return this; }
+
+    public MainPage SearchButton() {
+        driver.findElement(By.cssSelector("div.bgfade.col-md-4.col-xs-12 > button")).click();
         return this;
     }
 
-    public MainPage clickSearchButton() {
-        WebElement searchButton = driver.findElement(By.cssSelector("div.bgfade.col-md-4.col-xs-12 > button"));
-        searchButton.click();
-        return this;
-    }
-
-    public MainPage clickDoneButton() {
-        WebElement agesDoneButton = driver.findElement(By.cssSelector("#ages > div > div > div.modal-footer > button"));
-        agesDoneButton.click();
+    public MainPage DoneButton() {
+        driver.findElement(By.cssSelector("#ages > div > div > div.modal-footer > button")).click();
         return this;
     }
 
