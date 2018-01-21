@@ -20,20 +20,26 @@ public class MainPage extends AbstractWebPage{
 
 
     public MainPage selectHotelTitle() {
-        driver.findElement(By.cssSelector("[href*='#EXPEDIA")).click();
-        return this; }
+        driver.findElement(By.cssSelector("[href*='#HOTELS")).click();
+        return this;
+    }
 
 
     public MainPage enterCity(String name) {
 
-            WebElement enterCity = driver.findElement(By.cssSelector("#citiesInput"));
+            WebElement enterCity = driver.findElement(By.cssSelector("#s2id_autogen10"));
             enterCity.click();
-            enterCity.clear();
+            driver.switchTo().activeElement();
+            driver.findElement(By.cssSelector("#select2-drop")).click();
+            //#select2-drop-mask
+            //enterCity.click();
+            // enterCity.clear();
             enterCity.sendKeys(name);
 
             driver.switchTo().activeElement();
             driver.findElement(By.cssSelector("#eac-container-citiesInput"));
             driver.findElement(By.cssSelector("#eac-container-citiesInput > ul > li:nth-child(1) > div")).click();
+        driver.switchTo().activeElement();
             return this;
     }
 
