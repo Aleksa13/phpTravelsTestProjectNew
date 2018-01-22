@@ -29,9 +29,10 @@ public class MainPage extends AbstractWebPage{
 
             WebElement enterCity = driver.findElement(By.cssSelector("#s2id_autogen10"));
             enterCity.click();
-            driver.switchTo().activeElement();
-            driver.findElement(By.cssSelector("#select2-drop")).click();
-            //#select2-drop-mask
+            //driver.switchTo().activeElement();
+            //driver.findElement(By.cssSelector("#select2-drop-mask"));
+            //driver.findElement(By.cssSelector("#select2-drop")).click();
+
             //enterCity.click();
             // enterCity.clear();
             enterCity.sendKeys(name);
@@ -48,11 +49,10 @@ public class MainPage extends AbstractWebPage{
         WebElement checkInDate = driver.findElement(By.cssSelector("#dpean1 > input"));
         checkInDate.click();
         checkInDate.clear();
-//        driver.switchTo().activeElement();
-//        WebElement enterDate = driver.findElement(By.cssSelector("body > div:nth-child(19)"+date));
-//        enterDate.click();
-//        driver.switchTo().activeElement();
-//        return this;
+        driver.switchTo().activeElement();
+        WebElement enterDate = driver.findElement(By.cssSelector("body > div:nth-child(19)")); //+ date));
+        enterDate.click();
+        driver.switchTo().activeElement();
         checkInDate.sendKeys(checkInDates);
         return this;
     }

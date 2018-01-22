@@ -38,26 +38,22 @@ public class FlightsTest extends BaseTest {
 
     @Test
     public void FlightsTest () throws InterruptedException {
-        flightTitle();
+        flyingPage.flightTitle();
 
         Thread.sleep(2000);
 
-        WebElement departDate = driver.findElement(By.cssSelector(".mewtwo-flights-dates .mewtwo-flights-dates-depart"));
-        departDate.click();
+        flyingPage.departDates();
 
         driver.switchTo().activeElement();
 
         Thread.sleep(2000);
 
-        WebElement enterDate = driver.findElement(By.id("mewtwo-datepicker-2018-1-23"));
-        enterDate.click();
+        flyingPage.enterDepartDate();
 
         //WebElement departDate = driver.findElement(By.cssSelector(".mewtwo-flights-dates .mewtwo-flights-dates-return"));
         //departDate.click();
 
-
-        WebElement returnDate = driver.findElement(By.id("mewtwo-datepicker-2018-1-27"));
-        returnDate.click();
+        flyingPage .returnDates();
 
         driver.switchTo().activeElement();
 
@@ -103,10 +99,7 @@ public class FlightsTest extends BaseTest {
         //departData.selectByVisibleText("#mewtwo-datepicker-2018-1-10 > div");
     }
 
-    public void flightTitle() {
-        WebElement flightTitle = driver.findElement(By.cssSelector("div.RTL_Bar.searcharea > div > ul > li:nth-child(2) > a"));
-        flightTitle.click();
-    }
+
 
 
 }

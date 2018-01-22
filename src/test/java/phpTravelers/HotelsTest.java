@@ -30,15 +30,14 @@ public class HotelsTest extends BaseTest {
 
 
     @Test (dataProvider = "Hotels", dataProviderClass = TestDataProvider.class)
-    public void hotelsTest(String name, //String checkInDates, String checkOutDates,
-                           int childIndex, int index, int stars)throws InterruptedException {
+    public void hotelsTest(String name, String checkInDates, String checkOutDates, int childIndex, int index, int stars)throws InterruptedException {
 
         firstPage
                 .selectHotelTitle()
-                .enterCity(name);
-            //    .checkInDate(checkInDates);
+                .enterCity(name)
+               .checkInDate(checkInDates);
         Thread.sleep(2000);
-            //    firstPage.checkOutDate(checkOutDates);
+              firstPage.checkOutDate(checkOutDates);
         Thread.sleep(2000);
 
 
@@ -59,13 +58,6 @@ public class HotelsTest extends BaseTest {
          secondPage.FilterButton();
          secondPage.SearchButton();
          secondPage.selectStars(stars);
-
-         //List<WebElements>??
-//
-//         WebElement searchResult1 = driver.findElement(By.cssSelector(" tr:nth-child(1) > td > div.col-md-4.col-xs-5.go-right.rtl_pic > div > a > img"));
-//         WebElement searchResult2 = driver.findElement(By.cssSelector(" tr:nth-child(2) > td > div.col-md-4.col-xs-5.go-right.rtl_pic > div > a > img"));
-//         WebElement searchResult3 = driver.findElement(By.cssSelector(" tr:nth-child(3) > td > div.col-md-4.col-xs-5.go-right.rtl_pic > div > a > img"));
-
 
      }
 
