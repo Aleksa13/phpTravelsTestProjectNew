@@ -27,20 +27,24 @@ public class MainPage extends AbstractWebPage{
 
     public MainPage enterCity(String name) {
 
-            WebElement enterCity = driver.findElement(By.cssSelector("#s2id_autogen10"));
-            enterCity.click();
-            //driver.switchTo().activeElement();
-            //driver.findElement(By.cssSelector("#select2-drop-mask"));
-            //driver.findElement(By.cssSelector("#select2-drop")).click();
+//            WebElement enterCity = driver.findElement(By.cssSelector("#s2id_autogen10"));
+//            enterCity.click();
+        driver.findElement(By.cssSelector("a[href='#HOTELS']")).click();
+
+        driver.findElement(By.id("s2id_autogen10")).click();
+
+
+        driver.findElement(By.cssSelector("#select2-drop> div.select2-search > input.select2-input")).sendKeys(name);
+
+        driver.findElement(By.cssSelector("#select2-drop ul.select2-results ul li:nth-child(1)")).click();
 
             //enterCity.click();
             // enterCity.clear();
-            enterCity.sendKeys(name);
-
-            driver.switchTo().activeElement();
-            driver.findElement(By.cssSelector("#eac-container-citiesInput"));
-            driver.findElement(By.cssSelector("#eac-container-citiesInput > ul > li:nth-child(1) > div")).click();
-        driver.switchTo().activeElement();
+            //enterCity.sendKeys(name);
+            //driver.switchTo().activeElement();
+            //driver.findElement(By.cssSelector("#eac-container-citiesInput"));
+            //driver.findElement(By.cssSelector("#eac-container-citiesInput > ul > li:nth-child(1) > div")).click();
+        //driver.switchTo().activeElement();
             return this;
     }
 
@@ -68,7 +72,7 @@ public class MainPage extends AbstractWebPage{
         return this; }
 
     public MainPage SearchButton() {
-        driver.findElement(By.cssSelector("div.bgfade.col-md-4.col-xs-12 > button")).click();
+        driver.findElement(By.cssSelector("div.bgfade.col-md-12.form-group.go-right.col-xs-12 > button")).click();
         return this;
     }
 

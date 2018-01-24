@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import javax.xml.transform.Result;
 import java.util.List;
 
 /**
@@ -20,20 +19,36 @@ public class ResultsPage extends AbstractWebPage{
 //        return selector;
 //    }
 
-    public WebElement SearchButton() {
-    driver.findElement(By.cssSelector("#searchform")).click();
-    return SearchButton();
 
-    }
-    public WebElement FilterButton() {
-        driver.findElement(By.cssSelector("#body-section > div.header-mob.mt-25 > div > div > div:nth-child(4) > div > a")).click();
-        return FilterButton();
-    }
 
-    public ResultsPage selectStars(int stars) {
-        driver.findElement(By.id("#\\3"+stars)).click();
+
+    public ResultsPage starsGrade(int index) {
+       // driver.findElement(By.cssSelector("#body-section > div.header-mob.mt-25 > div > div > div:nth-child(4) > div > a")).click();
+        driver.findElements(By.cssSelector(".go-right ins")).get(index).click();
+        //driver.findElement(By.id("#34")).click();
         return this;
     }
+
+    public ResultsPage SearchButton() {
+        driver.findElement(By.id("searchform")).click();
+        return this;
+    }
+
+public List<WebElement>  getSearchResults(){
+        return driver.findElements(By.cssSelector( "div.itemscontainer > table > tbody > tr"));
+}
+
+public int getStarsCount(WebElement result){
+    return result.findElements(By.cssSelector("i.icon-star-5")).size();
+
+    }
+
+
+
+//    public ResultsPage selectStars(int stars) {
+//        driver.findElement(By.id("#\\3"+stars)).click();
+//        return this;
+//    }
 
 
 }
