@@ -29,9 +29,9 @@ public class TestDataProvider {
     public static Object[][] hotels() {
 
         return new Object[][]{
-                {"Dubai"},//"01/31/2018","02/02/2018",1,2,1},
-                {"New York"},//"03/24/2018","04/13/2018",// 1,3,2},
-                {"Riga"}};//"06/23/2018","08/10/2018",2,5,3}
+                {"Dubai",PropertyTypes.Hotel},//"01/31/2018","02/02/2018",1,2,1},
+                {"New York",PropertyTypes.Apartment},//"03/24/2018","04/13/2018",// 1,3,2},
+                {"Riga",PropertyTypes.Villa}};//"06/23/2018","08/10/2018",2,5,3}
 
 
 //        @DataProvider(name = "Results")

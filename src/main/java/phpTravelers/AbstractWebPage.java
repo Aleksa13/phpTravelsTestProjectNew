@@ -1,6 +1,7 @@
 package phpTravelers;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 /**
  * Created by aleksandra on 1/8/18.
@@ -9,6 +10,7 @@ public abstract class AbstractWebPage {
     protected WebDriver driver;
     AbstractWebPage (WebDriver driver) {
         this.driver=driver;
+        PageFactory.initElements(driver, this);
 
     }
 

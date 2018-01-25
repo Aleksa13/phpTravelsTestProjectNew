@@ -5,7 +5,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import javax.xml.ws.WebEndpoint;
 import java.util.List;
 
 import static org.testng.Assert.assertEquals;
@@ -34,7 +33,7 @@ public class HotelsTest extends BaseTest {
 
 
     @Test (dataProvider = "Hotels", dataProviderClass = TestDataProvider.class)
-    public void hotelsTest(String name) //String checkInDates, String checkOutDates, int childIndex, int index, int stars)
+    public void hotelsTest(String name, PropertyTypes type) //String checkInDates, String checkOutDates, int childIndex, int index, int stars)
     throws InterruptedException {
 
         firstPage
@@ -61,6 +60,9 @@ public class HotelsTest extends BaseTest {
         Thread.sleep(2000);
 
          ResultsPage secondPage = new ResultsPage(driver);
+         secondPage.selectPropertyType(type);
+
+
          secondPage.starsGrade(3);
          secondPage.SearchButton();
 
@@ -74,7 +76,6 @@ public class HotelsTest extends BaseTest {
              ) {
 
             softAssert.assertEquals(4, secondPage.getStarsCount(box), "stars count is incorrect");
-
         }
            softAssert.assertAll();
      }
