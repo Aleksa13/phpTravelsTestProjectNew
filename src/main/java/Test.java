@@ -1,7 +1,7 @@
 /**
  * Created by aleksandra on 2/6/18.
 // */
-//public class Test {
+public class Test {
 //   public static void main(String [] args) {
 //        int j=0;
 //        int i;
@@ -71,23 +71,20 @@
 //}
 
 //
-//public class MyOutput {
-//public static void main(String[] args) {
-//        int x = 10;
-//        int y = 20;
-//        int z = 30;
-//        System.out.println(x + y + z);
-//        System.out.println(" " + x + y + z);
-//        System.out.println(x + " " + y+z);
-//       System.out.println(x+y + " " +z);
-//    System.out.println(x + y+z + " ");
-//        }
-//}
-//
-//10 20 30 60
-//"102030" -
-//"10 2030"
-//30 ""
+//public class my {
+    public static void main(String[] args) {
+        int x = 10;
+        int y = 20;
+        int z = 30;
+        System.out.println(x + y + z); //60
+        System.out.println(" " + x + y + z); //102030
+        System.out.println(x + " " + y + z);// 10 2030
+        System.out.println(x + y + " " + z);//30 30
+        System.out.println(x + y + z + " ");//60
+    }
+
+}
+
 
 
 //
@@ -126,15 +123,15 @@
 //
 //(true false) = false  | (false ) & true  = false //  false =>false
 //
-
-class Maybe {
-    public static void main(String[] args) {
-        boolean b1 = true;
-        boolean b2 = false;
-        System.out.print(!false ^ false); //= true
-        System.out.print(" " + (!b1 & (b2 = true)));// =    false
-        System.out.println(" " + (b2 ^ b1)); //true|true = false
-    }
-}
+//
+//class Maybe {
+//    public static void main(String[] args) {
+//        boolean b1 = true;
+//        boolean b2 = false;
+//        System.out.print(!false ^ false); //= true
+//        System.out.print(" " + (!b1 & (b2 = true)));// =    false
+//        System.out.println(" " + (b2 ^ b1)); //true|true = false
+//    }
+//}
 
 
