@@ -13,9 +13,11 @@ public class HomeWork {
 //    }
 
 //    12 ???
-    //todo ASK
+      //todo ASK
 //  int r=1,x=11;
-//  r+=x;
+//  r+=x; //r = r+x ;
+// r=1+11 =12,x=11
+
 //  if((x>4)&&(x<10)){  // true&&false
 //      r+=2*x;
 //  }
@@ -26,7 +28,7 @@ public class HomeWork {
 //    r+=4*x;
 //  }
 //  r+=5*x;
-//  System.out.println(r);
+//  System.out.println(r); //110 ?
 //
 
 //13.
@@ -34,7 +36,7 @@ public class HomeWork {
 //    int x=7,y=8;
 //    if(x<y)  //true
 //      if(x+2>y) //true
-//        if(y<x);//true
+//        if(y<x);//false?
 //    else if (!false)
 //      System.out.print("inner"); //stop here? because true already ? no need to go to the next?
 //    else if(true)
@@ -45,7 +47,7 @@ public class HomeWork {
 //    boolean y=false;
 //    int z=42;
 //
-//    if((z++==42)&&(y=true))   //f t = 43
+//    if((z++==42)&&(y=true))   //f t = 43 // t t =43
 //    z++;                       // 44
 //    if((x=false)||(++z==45))  //t/t=t 45
 //      z++; //46
@@ -56,7 +58,7 @@ public class HomeWork {
 //    int x =23%4; // 3 left
 //
 // 16.
-//   int x = 32*(31-10*3);// 32* (31-30) = 32 ?
+//   int x = 32*(31-10*3);// 32* (31-30) = 32
 //
 //  17.
     /* // - ok  */
@@ -70,40 +72,44 @@ public class HomeWork {
 
 // 19.
 
-    //(1/2+3/2+0.1); // found in internet :
-    //  ((1/2) + (3/2) + 0.1) - uses as separate parts ?
-    //((1/2) + (3/2) + 0.1) = ((0?) + (1?) + 0.1) = 1.1 ?
-    // "/" - Деление нацело обрезает, а не округляет результат.
+      //(1/2+3/2+0.1); // found in internet :
+      //  ((1/2) + (3/2) + 0.1) - uses as separate parts ?
+      //((1/2) + (3/2) + 0.1) = ((0?) + (1?) + 0.1) = 1.1 ?
+      // "/" - Деление нацело обрезает, а не округляет результат.
 
 //20.????
-    //todo ASK
+
 //    (- -1-3*10 /5-1) ;
-    // - (-1)-((3*10)/5)-1 = - (-1) - (30/5) -1 = -(-1) - 6 -1 =+1 -7 ? =-6 ?
- //21.
+      // - (-1)-((3*10)/5)-1 = - (-1) - (30/5) -1 = -(-1) - 6 -1 =+1 -7 ? =-6 ?
+      //21.
 
 //    int k=1;
 //    int i =++k +k++ + +k;  // ((++k) + (k++)) + (+k) =  ((2) + (2) + (+k)) = (4+3)= 7 ?
 //    System.out.println(i);
-    //(k+++k):   first evaluates k++                  //  sub-expression evaluates to 3,
-    //  then post-increments k: k = 4
-    //then evaluates (k++)+k               //  evaluates to 3+4 = 7
+      //(k+++k):   first evaluates k++                  //  sub-expression evaluates to 3,
+      //  then post-increments k: k = 4
+      //then evaluates (k++)+k               //  evaluates to 3+4 = 7
 
 //
- //22.??? //todo ASK
+      //22.??? //todo ASK
 //    int []array = {4,8,16};
+      // 0 1 2
 //    int i = 1;
-//    array[++i] = --i;
+      //array [2] = 1 -> changed for 16 to 1
+
+//    array[++i] = --i;  -> we dont do next step,because it just the 1 option to do
 //    System.out.println(array [0] + array[1] + array[2]);
 //
 
-//23. ?
-    //todo ASK
 
-    //a. (1+2+"3") = 33 ok
-    //b. "1"+2+3 =123 no
-    //c.4+1.0f = ?
-    //d.10/9 = 1 ok
-    //e. 'a'+1  = ?
+//23. ?
+      //todo ASK
+
+      //a. (1+2+"3") = 33 ok
+      //b. "1"+2+3 =123 no
+      //c.4+1.0f =  ? ///5.0f
+      //d.10/9 = 1 ok
+      //e. 'a'+1  =   'a' - each charter has his own value asci table = > in case 'caht' + int = int not chart
 
 
 // //24. ?
@@ -130,7 +136,7 @@ public class HomeWork {
 //    }
 //    System.out.println(k+ "," + l);
 
-    //26. a += b	Краткая форма записи a = a + b i+=1 = i=0+1
+      //26. a += b	Краткая форма записи a = a + b i+=1 = i=0+1
 //    //todo ASK
 //    int i =0; int j=0;
 //    boolean t = true; boolean r;
@@ -140,20 +146,32 @@ public class HomeWork {
 //    r=(t || 0 <(j+=2)); // t || ->stop ??
 //    System.out.println(i + "" +j); //i3j1? =3 1 ?
 
-    //27.
-    //todo ASK
-//    if(true)
-//      if(false)
+      //27.
+      //todo ASK
+//    if(true){ // ->
+//      if(false) {
 //        System.out.println("a");
-//    else
-//      System.out.println("b"); // b? - if doesnt have any st??
-
+//    else{
+//      System.out.println("b"); // b? -
+ // }
+ // }
     //28.??????
 //    //TODO AKS
 //    outer:
 //    for (int i=0; i<3; i++) {
 //      for(int j=0; j<2;j++) {
-//        //i=0 i<3 true i=1
+//
+//        if (i == j) {
+//          //i1 == j1
+//          //i2==j2
+//          continue outer;
+//        }
+//        System.out.println("i=" + i + ",j=" + j);
+//      }
+
+
+
+//        i=0 i<3 true i=1
 //        //i=1 i<3 true i=2
 //        //i=2 i<3 true i=3
 //        //i=3 i<3 f
@@ -163,13 +181,6 @@ public class HomeWork {
 //        //j=1 i<2 true j=2
 //        //j=2 i<2 f
 //
-//        if (i == j) {
-//          //i1 == j1
-//          //i2==j2
-//          continue outer;
-//        }
-//        System.out.println("i=" + i + ",j=" + j);
-//      }
 // }
 
 //    //29.
@@ -194,10 +205,10 @@ public class HomeWork {
 //30 ?
     //todo ASK
     // a??int j=10;
-    //for(int i =0,j+=90;i<j;i++){j--;}
+    //for(int i =0,j+=90;i<j;i++){j--;} 4 states -incorrect
 
 
-    //b?? for (int i=10; i=0;i--) {}???
+    //b?? for (int i=10; i=0;i--) {}??? - bot same int - incorrect
 
     //c.
     //??for (int i =0,j=100;i<j;i++,--j){;}
