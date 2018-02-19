@@ -156,19 +156,17 @@ public class HomeWork {
  // }
  // }
     //28.??????
-//    //TODO AKS
-//    outer:
-//    for (int i=0; i<3; i++) {
-//      for(int j=0; j<2;j++) {
-//
-//        if (i == j) {
-//          //i1 == j1
-//          //i2==j2
-//          continue outer;
-//        }
-//        System.out.println("i=" + i + ",j=" + j);
-//      }
+    //TODO AKS
+    outer:
+    for (int i=0; i<3; i++) {
+        for (int j = 0; j < 2; j++) {
 
+            if (i == j) {
+
+                continue outer;
+            }
+            System.out.println("i=" + i + ",j=" + j);
+        }
 
 
 //        i=0 i<3 true i=1
@@ -203,21 +201,23 @@ public class HomeWork {
 //    //1010?
 
 //30 ?
-    //todo ASK
-    // a??int j=10;
-    //for(int i =0,j+=90;i<j;i++){j--;} 4 states -incorrect
+        //todo ASK
+        // a??int j=10;
+        //for(int i =0,j+=90;i<j;i++){j--;} 4 states -incorrect
 
 
-    //b?? for (int i=10; i=0;i--) {}??? - bot same int - incorrect
+        //b?? for (int i=10; i=0;i--) {}??? - bot same int - incorrect
 
-    //c.
-    //??for (int i =0,j=100;i<j;i++,--j){;}
+        //c.
+        //??for (int i =0,j=100;i<j;i++,--j){;}
 
-    //d.int i,j;
-    //for (j=100;i<j;j--) {i+=2;} no int i?
+        //d.int i,j;
+        //for (j=100;i<j;j--) {i+=2;} no int i?
 
 
 // /e.int i =100;
-    //for ((i>0);i--){} ????
- }
+        //for ((i>0);i--){} ????
+
+    }
+    }
 }
